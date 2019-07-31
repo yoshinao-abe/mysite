@@ -4,11 +4,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 #new gem
-gem "webpacker"           # , github: "rails/webpacker”
+gem 'webpacker'  , github: 'rails/webpacker'
 gem "kaminari"            #ページネーション　（will pagenateという選択肢もある）
 gem "faker"               #ありがちなテストデータ作成
 gem "autodoc"             #APIテスト時にAPIドキュメントの作成をしてくれる
-gem "bootstrap-sass"      #bootstrapのやつ
+# for Bootstrap4
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.3.1'
+gem 'bootstrap-sass'      #bootstrapのやつ
+
 gem "ransack"             #検索機能用の
 gem "carrierwave"         #画像アップロード機能用
 gem "devise"              #ログイン機能

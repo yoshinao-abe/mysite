@@ -1,15 +1,137 @@
 <% provide(:title, "Home") %>
+<div class="row pagebody">
+  
+<!--　左側　-->
+  <div class="leftbar col-md-3" >
+    <h1 class="btn btn-success btn-lg">GAMERES</h1>
+    <div class="list-group" style="max-width: 400px">
+      <a href="#" class="list-group-item-success list-group-item list-group-item-action active">HOME</a>  
+      <a href="#" class="list-group-item-success list-group-item list-group-item-action active">PROFILE</a>
+      <a href="#" class="list-group-item-success list-group-item list-group-item-action active">SETTINGS</a>
+      <a href="#" class="list-group-item-success list-group-item list-group-item-action active">HELP</a>
+             
+           <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        投稿する
+      </button>
+      
+ <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">投稿</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="form-group ">
+                  <input type="text">
+                  <div class="form-group">
+                    <label for="exampleInputFile">添付</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Example block-level help text here.</p>  
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-primary">投稿完了！</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+    
+    
+  </div>
 
-    <h1>GAMERES</h1>
+<!--  <div class="content col-lg-9">-->
+<!--　中央　-->
+    <div class="center col-md-6">
+      <h2>HOME</h2>
+      <form class="form-group ">
+        <input type="text">
+        <div class="form-group">
+        <label for="exampleInputFile">File input</label>
+        <input type="file" id="exampleInputFile">
+        <p class="help-block">Example block-level help text here.</p>          </div>
+      </form>
+      
+<!--　タブ実装　-->
+      <div class="p-3">
+        <ul class="nav nav-tabs　nav-justified">
+          <li class="nav-item">
+           <a href="#tab1" class="nav-link" data-toggle="tab">フォロー投稿一覧</a>
+          </li>
+          <li class="nav-item">
+            <a href="#tab2" class="nav-link" data-toggle="tab">お気に入り一覧</a>
+          </li>
+        </ul>
+        
+        <div class="tab-content">
+          <div id="tab1" class="tab-pane active">
+            <div class="btn btn-primary">フォロー投稿一覧</div>
+          </div>
+          <div id="tab2" class="tab-pane">
+            <div class="btn btn-success">お気に入り一覧</div>
+          </div>
+        </div>
+      </div>
+      
+<!--　各投稿　-->
+        <div class="post">
+         <img> 
+         <form>
+         <p>DATE</p>
+         <p>HART</p>
+        </div>
+        
+        <p>Pagenation</p>
+      
+   </div>
+<!--　右側　-->
+    <div class="rightbar col-md-3">
+      
+      <form>serch form
+        <input type="text">
+      </form>
+      
+      <div class="list-group" style="max-width: 400px;">
+        <a href="#" class="list-group-item list-group-item-action active">game1</a>
+        <a href="#" class="list-group-item list-group-item-action ">game2</a>
+        <a href="#" class="list-group-item list-group-item-action ">game3</a>
+        <a href="#" class="list-group-item list-group-item-action ">game4</a>
+        <a href="#" class="list-group-item list-group-item-action ">game5</a>
+        <a href="#" class="list-group-item list-group-item-action ">game6</a>
+        <a href="#" class="list-group-item list-group-item-action ">game7</a>
+        <a href="#" class="list-group-item list-group-item-action ">game8</a>
+        <a href="#" class="list-group-item list-group-item-action ">game9</a>
+        <a href="#" class="list-group-item list-group-item-action ">game10</a>
+      </div>
+    </div>
+    
+  <!--</div>-->
+    
+    
+    
+    
+   <!--
+
     <p>
       This is the home page for the
       <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
       sample application.
     </p>
     
-    
-    <a class="btn btn-primary" href="#" role="button">Link</a>
-<button class="btn btn-primary" type="submit">Button</button>
-<input class="btn btn-primary" type="button" value="Input">
-<input class="btn btn-primary" type="submit" value="Submit">
-<input class="btn btn-primary" type="reset" value="Reset">
+ <div id='hello'>
+  {{message}}
+  <app></app>
+</div>
+    </div>
+-->
+
+<%= javascript_pack_tag "static_pages" %>
