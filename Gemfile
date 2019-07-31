@@ -19,6 +19,7 @@ gem "devise"              #ログイン機能
 gem "omniauth"            #ソーシャルアカウントと連携したログイン
 gem "acts-as-taggable-on" #タグ機能用の
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
@@ -72,6 +73,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem "minitest"
+  gem "minitest-reporters"  #testようの
+  gem "guard"
+  gem "guard-minitest"
+  
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
