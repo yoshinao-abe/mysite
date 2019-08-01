@@ -18,6 +18,7 @@ gem "carrierwave"         #画像アップロード機能用
 gem "devise"              #ログイン機能
 gem "omniauth"            #ソーシャルアカウントと連携したログイン
 gem "acts-as-taggable-on" #タグ機能用の
+gem "mysql2"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
