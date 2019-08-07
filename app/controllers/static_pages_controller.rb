@@ -12,6 +12,9 @@ class StaticPagesController < ApplicationController
   def contact
   end
   
+  def signup
+  end
+  
   class User
     attr_accessor :name, :email
     

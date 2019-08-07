@@ -10,7 +10,7 @@ gem "faker"               #ありがちなテストデータ作成
 gem "autodoc"             #APIテスト時にAPIドキュメントの作成をしてくれる
 # for Bootstrap4
 gem 'jquery-rails'
-gem 'bootstrap', '~> 4.3.1'
+#gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass'      #bootstrapのやつ
 
 gem "ransack"             #検索機能用の
@@ -78,6 +78,7 @@ group :test do
   gem "minitest-reporters"  #testようの
   gem "guard"
   gem "guard-minitest"
+  gem 'rails-controller-testing'
   
 end
 

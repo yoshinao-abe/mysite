@@ -1,0 +1,42 @@
+<!--　左側　-->
+  <div class="leftbar col-md-3" >
+     <%= link_to "GAMERES",root_path ,    class:"btn btn-success btn-lg col-md-12" %>  
+    <div class="list-group" style="max-width: 400px">
+     <%= link_to "HOME",root_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>      
+     <%= link_to "MYPAGE",about_path , class:"list-group-item-success list-group-item list-group-item-action active" %>      
+     <%= link_to "SIGNUP",signup_path ,class:"list-group-item-success list-group-item list-group-item-action active" %>      
+     <%= link_to "GAMES",help_path ,   class:"list-group-item-success list-group-item list-group-item-action active" %>         
+     <%= link_to "HELP",help_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>       
+ <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        投稿する
+      </button>
+ <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">投稿</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form class="form-group ">
+                  <input type="text">
+                  <div class="form-group">
+                    <label for="exampleInputFile">添付</label>
+                    <input type="file" id="exampleInputFile">
+                    <p class="help-block">Example block-level help text here.</p>  
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+                <button type="button" class="btn btn-primary">投稿完了！</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
