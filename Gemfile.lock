@@ -315,6 +315,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   autodoc
+  bcrypt
   bootsnap (>= 1.1.0)
   bootstrap-sass
   byebug
