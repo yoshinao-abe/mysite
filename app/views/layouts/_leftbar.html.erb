@@ -2,11 +2,15 @@
   <div class="leftbar col-md-3" >
      <%= link_to "GAMERES",root_path ,    class:"btn btn-success btn-lg col-md-12" %>  
     <div class="list-group" style="max-width: 400px">
-     <%= link_to "HOME",root_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>      
-     <%= link_to "MYPAGE",about_path , class:"list-group-item-success list-group-item list-group-item-action active" %>      
-     <%= link_to "SIGNUP",signup_path ,class:"list-group-item-success list-group-item list-group-item-action active" %>      
-     <%= link_to "GAMES",help_path ,   class:"list-group-item-success list-group-item list-group-item-action active" %>         
+     <%= link_to "HOME",root_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>
      <%= link_to "HELP",help_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>       
+       <% if logged_in? %>
+        <%= link_to "MYPAGE", current_user , class:"list-group-item-success list-group-item list-group-item-action active" %>
+        <%= link_to "GAMES",help_path ,   class:"list-group-item-success list-group-item list-group-item-action active" %>  
+        <%= link_to "LOGOUT",logout_path, method: :delete,class:"list-group-item-success list-group-item list-group-item-action active" %>
+        <% else %>
+        <%= link_to "Log in", login_path, class:"list-group-item-success list-group-item list-group-item-action active" %>
+       <% end %>
  <!-- Button trigger modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
         投稿する
