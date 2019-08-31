@@ -5,7 +5,8 @@
      <%= link_to "HOME",root_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>
      <%= link_to "HELP",help_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>       
        <% if logged_in? %>
-        <%= link_to "MYPAGE", current_user , class:"list-group-item-success list-group-item list-group-item-action active" %>
+        <%= link_to "MYPAGE", edit_user_path(current_user) , class:"list-group-item-success list-group-item list-group-item-action active" %>
+        <%= link_to "USERS", users_path(current_user) , class:"list-group-item-success list-group-item list-group-item-action active" %>
         <%= link_to "GAMES",help_path ,   class:"list-group-item-success list-group-item list-group-item-action active" %>  
         <%= link_to "LOGOUT",logout_path, method: :delete,class:"list-group-item-success list-group-item list-group-item-action active" %>
         <% else %>
