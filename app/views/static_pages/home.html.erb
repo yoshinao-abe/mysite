@@ -1,6 +1,21 @@
 <% provide(:title, "Home") %>
 <div class="row pagebody">
   <%= render 'layouts/leftbar' %>
+  <% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="micropost_form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div class="col-md-8">
+      <h3>Micropost Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
 
 <!--  <div class="content col-lg-9">-->
 <!--　中央　-->
@@ -52,23 +67,5 @@
   <%= render 'layouts/rightbar' %>
     
 </div>
-    
-    
-    
-    
-   <!--
-
-    <p>
-      This is the home page for the
-      <a href="https://railstutorial.jp/">Ruby on Rails Tutorial</a>
-      sample application.
-    </p>
-    
- <div id='hello'>
-  {{message}}
-  <app></app>
-</div>
-    </div>
--->
-
+<% end %>
 <%= javascript_pack_tag "static_pages" %>
