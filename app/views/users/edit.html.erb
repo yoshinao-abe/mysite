@@ -6,11 +6,19 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= render 'form' %>
-
-    <div class="gravatar_edit">
+  <%= form_for @user,:url => {:action => 'update'}, :html => {:multipart => true} do |f| %>
+     <% if @user.image? %>
+      <%= image_tag @user.image.url, class: 'img-thumbnail img-fluid' %>
+     <% else %>
+      <%= image_tag("/images/icon/images.jpg") %>
+     <% end %>
+      <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png, image/jpg' %>
+      <%= f.submit "変更", class: "btn btn-primary" %>
+  <% end %>
+   <div class="gravatar_edit">
       <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">change</a>
-    </div>
+      <a href="http://gravatar.com/emails" target="_blank">画像を変更する</a>
+   </div>
+    <%= render 'form' %>
   </div>
 </div>

@@ -12,7 +12,7 @@ gem "autodoc"             #APIテスト時にAPIドキュメントの作成を�
 gem 'jquery-rails'
 #gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass'      #bootstrapのやつ
-
+gem 'acts-as-taggable-on'
 gem "ransack"             #検索機能用の
 gem "carrierwave"         #画像アップロード機能用
 gem "devise"              #ログイン機能
@@ -20,8 +20,7 @@ gem "omniauth"            #ソーシャルアカウントと連携したログ�
 gem "acts-as-taggable-on" #タグ機能用の
 gem "mysql2"
 gem "bcrypt"
-gem "faker"
-gem "carrierwave"
+gem "rmagick"
 gem "mini_magick"
 gem "will_paginate"
 gem "bootstrap-will_paginate"
@@ -61,7 +60,7 @@ end
 
 group :production do
   gem 'pg',  '0.20.0'
-  gem 'fog', '1.42'
+  gem 'fog'
   end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

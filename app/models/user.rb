@@ -19,7 +19,8 @@ class User < ApplicationRecord
                       uniqueness: { case_sensitive: false }
     has_secure_password                  
     validates :password, presence: true, length: { minimum: 6 },allow_nil: true
-    
+    #カラム名を↓に指定
+    mount_uploader :image, ImageUploader
 
 
     #渡された文字列のハッシュ値
@@ -33,9 +34,7 @@ class User < ApplicationRecord
     def User.new_token
         SecureRandom.urlsafe_base64
     end
- 
- 
- 
+
     def remember
         self.remember_token = User.new_token
         update_attribute(:remember_digest,User.digest(remember_token))
@@ -99,6 +98,14 @@ class User < ApplicationRecord
   # 現在のユーザーがフォローしてたらtrueを返す
   def following?(other_user)
     following.include?(other_user)
+  end
+  
+  def self.search(search)
+    if search
+      where(['name LIKE ?', "%#{search}%"])
+    else
+      all
+    end
   end
 
 private

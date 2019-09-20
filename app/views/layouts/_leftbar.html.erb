@@ -1,15 +1,17 @@
 <!--　左側　-->
-  <div class="leftbar col-md-3" >
+  <div class="leftbar col-md" >
      <%= link_to "GAMERES",root_path ,    class:"btn btn-success btn-lg col-md-12" %>  
     <div class="list-group" style="max-width: 400px">
      <%= link_to "HOME",root_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>
      <%= link_to "HELP",help_path ,    class:"list-group-item-success list-group-item list-group-item-action active" %>       
        <% if logged_in? %>
-        <%= link_to "MYPAGE", edit_user_path(current_user) , class:"list-group-item-success list-group-item list-group-item-action active" %>
+        <%= link_to "MYPAGE", current_user , class:"list-group-item-success list-group-item list-group-item-action active" %>
+       <%= link_to "SETTING", edit_user_path(current_user) , class:"list-group-item-success list-group-item list-group-item-action active" %>
         <%= link_to "USERS", users_path(current_user) , class:"list-group-item-success list-group-item list-group-item-action active" %>
         <%= link_to "GAMES",help_path ,   class:"list-group-item-success list-group-item list-group-item-action active" %>  
         <%= link_to "LOGOUT",logout_path, method: :delete,class:"list-group-item-success list-group-item list-group-item-action active" %>
-        <% else %>
+
+          <% else %>
         <%= link_to "Log in", login_path, class:"list-group-item-success list-group-item list-group-item-action active" %>
        <% end %>
  <!-- Button trigger modal -->
