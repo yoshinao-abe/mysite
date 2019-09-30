@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+  <table>
+      <thead>
+          <tr>
+              <th>game</th>
+              <th colspan="3"></th>
+          </tr>
+      </thead>
+      
+      <tbody>
+          <% @microposts.each do |micropost| %>
+          <tr>
+              <td><%= render 'microposts/tag_list', tag_list: micropost.tag_list %></td>
+          </tr>
+          <% end %>
+     </tbody>
+  </table>
+  

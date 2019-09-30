@@ -14,14 +14,37 @@ class MicropostsController < ApplicationController
         end
     end
     
+    def show
+        @micropost = Micropost.find(params[:id])
+    end
+    
     def destroy
         @micropost.destroy
         flash[:success] = "投稿は削除されました"
         redirect_to request.referrer || root_url
     end
+    
+    def index
+        if params[:tag]
+            @microposts = Micropost.tagged_with(params[:tag])
+        else
+            @microposts = Micropost.all
+        end
+        
+#        if params[:tag_name]
+ #           @microposts = @microposts.tagged_with("#{params[:tag_name]}")
+  #      end
+    end
+    
+    def tags
+        if params[:tag_name]
+            @microposts = @microposts.tagged_with("#{params[:tag_name]}")
+        end
+    end
  private
+
     def micropost_params
-      params.require(:micropost).permit(:content, :picture)
+      params.require(:micropost).permit(:content, :picture, :tag_list, :game_list, :category_list)
     end
     
     def correct_user

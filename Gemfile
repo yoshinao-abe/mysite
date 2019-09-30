@@ -12,6 +12,7 @@ gem "autodoc"             #APIテスト時にAPIドキュメントの作成を�
 gem 'jquery-rails'
 #gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass'      #bootstrapのやつ
+gem 'device'
 gem 'acts-as-taggable-on'
 gem "ransack"             #検索機能用の
 gem "carrierwave"         #画像アップロード機能用

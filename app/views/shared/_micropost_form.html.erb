@@ -7,6 +7,11 @@
    <div class="picture">
      <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
    </div>
+   <div class="field">
+     <%= f.label :tag_list, "ゲーム" %>
+     <%= text_field_tag 'micropost[tag_list]', @micropost.tag_list.join(','), "data-role" => "tagsinput" %>
+   </div>
+  
    <%= f.submit "投稿", class: "btn btn-primary float-right" %>
   </span>
 <% end %>

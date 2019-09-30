@@ -1,0 +1,17 @@
+<% if @feed_tags.any? %>
+
+       <h1>tab2</h1>
+  <p><%= render 'microposts/related_microposts', microposts: @micropost.find_related_tags %><p/>
+  <ol class="microposts col">
+    <%= render @feed_tags %>
+  </ol>
+  <%= will_paginate @feed_tags %>
+
+<% elsif @feed_items.any? %>
+  <ol class="microposts col">
+    <%= render @feed_items %>
+  </ol>
+  <%= will_paginate @feed_items %>
+<% end %>
+
+@feed_items = current_user.feed.paginate(page: params[:page])
