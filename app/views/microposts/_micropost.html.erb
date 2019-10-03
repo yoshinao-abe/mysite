@@ -16,7 +16,11 @@
   <div class="row">
    <span class="timestamp mb-1">
        
+<<<<<<< HEAD
      <p><%= render 'microposts/tag_list' %>
+=======
+         <p>a<%#= render 'microposts/tag_list', tag_list: @micropost.tag_list %></p>
+>>>>>>> likes
      Posted <%= time_ago_in_words(micropost.created_at) %> ago.
      <% if current_user?(micropost.user) %>
        <%= link_to "delete", micropost, method: :delete,

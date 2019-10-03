@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  micropost: example
+  user: Michael Example
+
+two:
+  micropost: example2
+  user: Sterling Archer
