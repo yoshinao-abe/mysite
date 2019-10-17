@@ -79,7 +79,6 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
   
-  # 完全な実装は次章の「ユーザーをフォローする」を参照
   def feed
     following_ids = "SELECT followed_id FROM relationships
                      WHERE follower_id = :user_id"

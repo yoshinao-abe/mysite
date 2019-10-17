@@ -3,12 +3,12 @@
    <%= render 'layouts/leftbar' %>
 </div>
 
-<div class="col-sm-6">
-<h1>All users</h1>
+<div class="col-sm-6 bg-light">
+<h1 class="bg-success text-center font-weight-bold">ユーザー一覧</h1>
 <%= will_paginate %>
 
 <!-- ユーザー検索機能 -->
- <p>user search</p>
+ <h3 class="text-center bg-success font-weight-bold">ユーザー検索</h3>
   <%= form_tag(users_path, :method => 'get' ) do %>
    <%= text_field_tag :search %>
    <%= submit_tag 'Search', :name => nil %>

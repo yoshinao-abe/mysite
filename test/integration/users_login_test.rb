@@ -3,11 +3,12 @@ require 'test_helper'
 class UsersLoginTest < ActionDispatch::IntegrationTest
     
     def setup
-        @user = users(:michael)
+      @user = users(:michael)
     end
     
     
    test "users_login_test" do
+        @tags = ActsAsTaggableOn::Tag.most_used(10)
      get login_path
      assert_template 'sessions/new'
      post login_path,params: {session: {email: "", password: ""}}

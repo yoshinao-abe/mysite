@@ -17,12 +17,12 @@
     <% if current_user?(@user) %>
        <%= link_to "編集する", edit_user_path, method: :get %>
      <% end %>
+    <%= render 'follow_form' if logged_in? %>
     <%= render 'layouts/leftbar' %>
   </aside>
   <div class="col-sm-6 bg-light">
-    <% render 'follow_form' if logged_in? %>
     <% if @user.microposts.any? %>
-      <h2 class="text-center bg-success text-bold">投稿一覧</h2>
+      <h2 class="text-center bg-success font-weight-bold">投稿一覧</h2>
       <ol class="microposts col">
         <%= render @microposts %>
       </ol>

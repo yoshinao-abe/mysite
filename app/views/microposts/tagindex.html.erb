@@ -1,0 +1,26 @@
+<% provide(:title, "Home") %>
+<div class="row">
+<div class="col-sm-3">
+<% if logged_in? %>
+   <aside class="mb-4">
+    <section class="user_info">
+     <%= render 'shared/user_info' %>
+    </section>
+    <section class="stats">
+     <%= render 'shared/stats' %>
+    </section>
+   </aside>
+<% end %>
+   <%= render 'layouts/leftbar' %>
+  </div>
+
+
+<div class="bg-light">
+    <h1 class="bg-success text-center">タグ一覧</h1>
+<div class="list-group" style="max-width: 400px;">
+     <%= @tags.each do |tag| %>
+      <%= link_to "#{tag.name}", tag_path(tag.id), class:"list-group-item list-group-item-action" %>
+     <% end %>
+</div>
+</div>
+</div>

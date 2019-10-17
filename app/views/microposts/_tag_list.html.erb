@@ -1,5 +1,8 @@
-<!--<%#  tag_list.each do |tag| %>
-  <span class="badge badge-primary">
-      <%#= link_to tag, microposts_path(tag_name: tag), class: 'text-white' %>
-  </span>
-<%# end %> --> <!-- テスト失敗回避 -->
+
+<% @microposts.each do |post| %>
+  <tr>
+    <td><%= raw(post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></td> <!--追加-->
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>

@@ -2,6 +2,7 @@ orange:
   content: "I just ate an orange!"
   created_at: <%= 10.minutes.ago %>
   user: michael
+  tags: FF
 
 tau_manifesto:
   content: "Check out the @tauday site by @mhartl: http://tauday.com"
@@ -17,6 +18,7 @@ most_recent:
   content: "Writing a short test"
   created_at: <%= Time.zone.now %>
   user: michael
+  tags: game
   
 <% 30.times do |n| %>
 micropost_<%= n %>:

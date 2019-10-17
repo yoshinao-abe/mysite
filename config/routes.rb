@@ -4,13 +4,13 @@ Rails.application.routes.draw do
     root  'static_pages#home'
    # get   'sessions/new'
    # get   'users/new'
-    get   '/index',     to: 'microposts#index'
-    get   'tags/:game', to: 'microposts#index', as: :tag
+    get   '/index',     to: 'microposts#tagindex'
+    get   'tags/:tag',  to: 'microposts#index', as: :tag
     get   '/tags',      to: 'microposts#tags'
     get   '/microposts',to: 'microposts#show'
-    get   '/help',      to: 'static_pages#help'
+ #   get   '/help',      to: 'static_pages#help'
     get   '/about',     to: 'static_pages#about'
-    get   '/contact',   to: 'static_pages#contact'
+#    get   '/contact',   to: 'static_pages#contact'
     get   '/sign',      to: 'static_pages#signup'
     get   '/signup',    to: 'users#new'
     post  '/signup',    to: 'users#create'

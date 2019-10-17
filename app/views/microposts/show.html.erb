@@ -18,7 +18,7 @@
   </div>
   <div class="row">
    <span class="timestamp mb-1">
-             <!--<p><%#= render 'microposts/tag_list', tag_list: @tag.tag_list %></p>-->
+             <p>tags: <%= raw(@micropost.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')) %></p>
      <p>いいね数：<%= @micropost.likes.count %></p>
      <% if current_user.already_liked?(@micropost) %>
         <%= button_to 'いいねを取り消す', micropost_like_path(@micropost), method: :delete %>

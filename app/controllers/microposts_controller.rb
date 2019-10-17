@@ -16,6 +16,7 @@ class MicropostsController < ApplicationController
     
     def show
         @micropost = Micropost.find(params[:id])
+        @tags = ActsAsTaggableOn::Tag.most_used(10)
         #@like = Like.new
     end
     
@@ -26,15 +27,15 @@ class MicropostsController < ApplicationController
     end
     
     def index
+      @tags = ActsAsTaggableOn::Tag.most_used(10)
+      @feed_tags  = current_user.feed.tagged_with(params[:tag]).paginate(page: params[:page])# ここをタグで引っ張ってくる
+      @micropost  = Micropost.tagged_with(params[:tag])
+      @feed_items = current_user.feed.paginate(page: params[:page])
         if params[:tag]
             @microposts = Micropost.tagged_with(params[:tag])
         else
             @microposts = Micropost.all
         end
-        
-#        if params[:tag_name]
- #           @microposts = @microposts.tagged_with("#{params[:tag_name]}")
-  #      end
     end
     
     def tags
@@ -42,6 +43,11 @@ class MicropostsController < ApplicationController
             @microposts = @microposts.tagged_with("#{params[:tag_name]}")
         end
     end
+    
+    def tagindex
+       @tags = ActsAsTaggableOn::Tag.most_used.paginate(page: params[:page])
+    end
+  
  private
 
     def micropost_params
