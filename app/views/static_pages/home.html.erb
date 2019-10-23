@@ -17,9 +17,55 @@
 <% if logged_in? %>
   <div class="center col-sm-6 bg-light">
    <h2 class="bg-success text-center font-weight-bold">HOME</h2>
-   <div class="row border border-bottom">
+   <div class="row">
     <section class="micropost_form">
-     <%= render 'shared/micropost_form' %>
+     <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#myModal">
+        投稿する
+      </button>
+ <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">投稿</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+               <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field col-sm">
+    <%= f.text_area :content, placeholder: "ここに書いてください" %>
+  </div>
+  <span>
+   <div class="picture ml-2 mb-2">
+     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+   </div>
+  </span>
+   <div class="field">
+     <%= f.label :tag_list, "ゲームタグ" %>
+     <%= text_field_tag 'micropost[tag_list]', @micropost.tag_list.join(','), "data-role" => "tagsinput" %>
+   </div>
+
+<script type="text/javascript">
+  $('#micropost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>
+            </div>
+           <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+            <%= f.submit "投稿", class: "btn btn-primary" %>
+      <% end %>
+           </div><!-- /.modal-footer -->
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
     </section>
    </div>
 <!--　タブ実装　-->
@@ -30,7 +76,7 @@
       <a href="#tab1" class="nav-link font-weight-bold" data-toggle="tab">フォロー投稿一覧</a>
      </li>
      <li class="nav-item">
-      <a href="#tab2" class="nav-link font-weight-bold" data-toggle="tab">お気に入り一覧</a>
+     <!-- <a href="#tab2" class="nav-link font-weight-bold" data-toggle="tab">お気に入り一覧</a>-->
      </li>
     </ul>
 <!--　タブ内容　-->

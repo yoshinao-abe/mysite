@@ -2,13 +2,13 @@
 <% provide(:url, user_path) %>
 <% provide(:button_text, "編集完了！") %>
 
-<h1>Update your profile</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-sm-6 col-sm-offset-3">
+<h1>ユーザー設定</h1>
   <%= form_for @user,:url => {:action => 'update'}, :html => {:multipart => true} do |f| %>
      <% if @user.image? %>
-      <%= image_tag @user.image.url, class: 'img-thumbnail img-fluid' %>
+      <%= image_tag @user.image.url, class: 'profile-image' %>
      <% else %>
       <%= image_tag("/images/icon/images.jpg") %>
      <% end %>

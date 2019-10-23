@@ -15,10 +15,10 @@
   </div>
 
 
-<div class="bg-light">
+<div class="bg-light col-sm-6">
     <h1 class="bg-success text-center">タグ一覧</h1>
 <div class="list-group" style="max-width: 400px;">
-     <%= @tags.each do |tag| %>
+     <% @tags.each do |tag| %>
       <%= link_to "#{tag.name}", tag_path(tag.id), class:"list-group-item list-group-item-action" %>
      <% end %>
 </div>

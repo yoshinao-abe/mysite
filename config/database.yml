@@ -15,23 +15,23 @@ default: &default
 # post: 3306
 # pool: 5
 # username: admin
-# passward: Bumpone1
+# passward: adminadmin
 # socket: /var/lib/mysql/mysql.sock
 # host: database-1.cnuoqgdvmnpt.ap-northeast-1.rds.amazonaws.com
  
 development:
- <<: *default
- database: db/development.sqlite3
-# adapter: mysql2
-# encoding: utf8
-# reconect: false
-# database: database-1
-# post: 3306
-# pool: 5
-# username: admin
-# passward: Bumpone1
-# socket: /var/lib/mysql/mysql.sock
-# host: database-1.cnuoqgdvmnpt.ap-northeast-1.rds.amazonaws.com
+# <<: *default
+# database: db/development.sqlite3
+ adapter: mysql2
+ encoding: utf8
+ reconect: false
+ database: database-1
+ post: 3306
+ pool: 5
+ username: admin
+ passward: adminadmin
+ socket: /var/lib/mysql/mysql.sock
+ host: database-1.cnuoqgdvmnpt.ap-northeast-1.rds.amazonaws.com
     
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -51,6 +51,6 @@ production:
 # post: 3306
 # pool: 5
 # username: admin
-# passward: Bumpone1
+# passward: adminadmin
 # socket: /var/lib/mysql/mysql.sock
 # host: database-1.cnuoqgdvmnpt.ap-northeast-1.rds.amazonaws.com

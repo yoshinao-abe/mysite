@@ -27,9 +27,10 @@ class MicropostsController < ApplicationController
     end
     
     def index
+      @micropost  = current_user.microposts.build
       @tags = ActsAsTaggableOn::Tag.most_used(10)
       @feed_tags  = current_user.feed.tagged_with(params[:tag]).paginate(page: params[:page])# ここをタグで引っ張ってくる
-      @micropost  = Micropost.tagged_with(params[:tag])
+      @microposts  = Micropost.tagged_with(params[:tag])
       @feed_items = current_user.feed.paginate(page: params[:page])
         if params[:tag]
             @microposts = Micropost.tagged_with(params[:tag])

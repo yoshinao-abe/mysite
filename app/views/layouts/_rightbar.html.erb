@@ -5,12 +5,12 @@
  <h3 class="text-center bg-success font-weight-bold">ユーザー検索</h3>
   <%= form_tag(users_path, :method => 'get' ) do %>
    <%= text_field_tag :search %>
-   <%= submit_tag 'Search', :name => nil %>
+   <%= submit_tag '検索', :name => nil %>
   <% end %>
      <%#= link_to image_tag("syadoba.png",class: "btn btn-success col-md-12", alt: "Logo" ),  contact_path %>
   <h3 class="text-center bg-success mt-2 font-weight-bold">人気タグ</h2>
     <div class="list-group" style="max-width: 400px;">
-     <%= @tags.each do |tag| %>
+     <% @tags.each do |tag| %>
       <%= link_to "#{tag.name}", tag_path(tag.name), class:"list-group-item list-group-item-action" %>
      <% end %>
     </div>

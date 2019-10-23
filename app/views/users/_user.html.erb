@@ -1,5 +1,6 @@
 <li>
-  <%= gravatar_for user, size: 50 %>
+  <%#= gravatar_for user, size: 50 %>
+  <%= image_tag user.image.url, class: 'profile-post-image mt-2 mr-2' %>
   <%= link_to user.name, user %>
   <% if current_user.admin? && !current_user?(user) %>
     | <%= link_to "delete", user, method: :delete,
