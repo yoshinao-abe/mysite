@@ -21,6 +21,7 @@ gem "omniauth"            #ソーシャルアカウントと連携したログ�
 gem "acts-as-taggable-on" #タグ機能用の
 gem "mysql2"
 gem "bcrypt"
+gem 'sqlite3'
 gem "rmagick"
 gem "mini_magick"
 gem "will_paginate"
@@ -39,7 +40,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
 end
 
 group :development do
