@@ -55,7 +55,7 @@ production:
   <<: *default
 #  database: db/production.sqlite3
   adapter: postgresql
-  encording: unicode
+  encoding: unicode
   pool: 5
   
 # adapter: mysql2
