@@ -5,11 +5,7 @@
     <section class="user_info text-center">
       <h1>
         <%#= gravatar_for @user, class: 'col-12' %>
-     <% if @user.image? %>
       <%= image_tag @user.image.url, class: 'profile-image mt-2 mr-2' %>
-     <% else %>
-      <%= image_tag("/images/icon/images.jpg") %>
-     <% end %>
         <div class="row mb-2">
           <%= @user.name %>
         </div>

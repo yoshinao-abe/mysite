@@ -19,7 +19,7 @@ class MicropostsInterfaceTest < ActionDispatch::IntegrationTest
     assert_difference 'Micropost.count', 1 do
       post microposts_path, params: { micropost:
                                       { content: content,
-                                        picture: picture  } }
+                                        picture: picture} }
     end
     assert assigns(:micropost).picture?
     follow_redirect!
