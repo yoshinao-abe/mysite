@@ -7,19 +7,16 @@ ruby '2.6.3'
 gem 'webpacker'  , github: 'rails/webpacker'
 gem "kaminari"            #ページネーション　（will pagenateという選択肢もある）
 gem "faker"               #ありがちなテストデータ作成
-gem "autodoc"             #APIテスト時にAPIドキュメントの作成をしてくれる
 # for Bootstrap4
 gem 'jquery-rails'
 #gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass'      #bootstrapのやつ
-gem 'device'
 gem 'acts-as-taggable-on'
 gem "ransack"             #検索機能用の
 gem "carrierwave"         #画像アップロード機能用
 gem "devise"              #ログイン機能
-gem "omniauth"            #ソーシャルアカウントと連携したログイン
 gem "acts-as-taggable-on" #タグ機能用の
-gem "mysql2"
+#gem "mysql2"
 gem "bcrypt"
 gem "rmagick"
 gem "mini_magick"
@@ -27,7 +24,7 @@ gem "will_paginate"
 gem "bootstrap-will_paginate"
 
 gem 'rails', '~> 5.2.3'
-#gem 'sqlite3'
+gem 'sqlite3', group: :development
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -39,7 +36,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
 end
 
 group :development do
@@ -62,7 +58,7 @@ end
 group :production do
   gem 'pg'
   gem 'fog'
-  end
+end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
