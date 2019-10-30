@@ -4,37 +4,36 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.6.3'
 
 #new gem
-gem 'webpacker'  , github: 'rails/webpacker'
-gem "kaminari"            #ページネーション　（will pagenateという選択肢もある）
-gem "faker"               #ありがちなテストデータ作成
+  gem 'webpacker'  , github: 'rails/webpacker'
+  gem "kaminari"            #ページネーション　（will pagenateという選択肢もある）
+  gem "faker"               #ありがちなテストデータ作成
 # for Bootstrap4
-gem 'jquery-rails'
+  gem 'jquery-rails'
 #gem 'bootstrap', '~> 4.3.1'
-gem 'bootstrap-sass'      #bootstrapのやつ
-gem 'acts-as-taggable-on'
-gem "ransack"             #検索機能用の
-gem "carrierwave"         #画像アップロード機能用
-gem "devise"              #ログイン機能
-gem "acts-as-taggable-on" #タグ機能用の
+  gem 'bootstrap-sass'      #bootstrapのやつ
+  gem 'acts-as-taggable-on'
+  gem "ransack"             #検索機能用の 
+  gem "carrierwave"         #画像アップロード機能用
+  gem "devise"              #ログイン機能
+  gem "acts-as-taggable-on" #タグ機能用の
 #gem "mysql2"
-gem "bcrypt"
-gem "rmagick"
-gem "mini_magick"
-gem "will_paginate"
-gem "bootstrap-will_paginate"
-
-gem 'rails', '~> 5.2.3'
-gem 'sqlite3', group: :development
-gem 'puma', '~> 3.11'
-gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
-gem 'jbuilder', '~> 2.5'
-gem 'bootsnap', '>= 1.1.0', require: false
+  gem "bcrypt"
+  gem "rmagick"
+  gem "mini_magick"
+  gem "will_paginate"
+  gem "bootstrap-will_paginate"
+  gem 'rails', '~> 5.2.3'
+  gem 'puma', '~> 3.11'
+  gem 'sass-rails', '~> 5.0'
+  gem 'uglifier', '>= 1.3.0'
+  gem 'coffee-rails', '~> 4.2'
+  gem 'turbolinks', '~> 5'
+  gem 'jbuilder', '~> 2.5'
+  gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'sqlite3', '1.3.13'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -56,7 +55,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.20.0'
   gem 'fog'
 end
 
