@@ -16,6 +16,7 @@ ruby '2.6.3'
   gem "carrierwave"         #画像アップロード機能用
   gem "devise"              #ログイン機能
   gem "acts-as-taggable-on" #タグ機能用の
+  gem "fog-aws"
 #gem "mysql2"
   gem "bcrypt"
   gem "rmagick"

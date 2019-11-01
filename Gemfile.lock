@@ -521,6 +521,7 @@ DEPENDENCIES
   devise
   faker
   fog
+  fog-aws
   guard
   guard-minitest
   jbuilder (~> 2.5)
