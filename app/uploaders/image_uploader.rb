@@ -1,10 +1,15 @@
 class ImageUploader < CarrierWave::Uploader::Base
-
  # MiniMagickを有効にします
  include CarrierWave::MiniMagick
 
  # このアップローダーを利用した画像の最大数を指定します。
  process resize_to_fit: [200, 200]
+ 
+  if Rails.env.production?
+    storage :fog
+  else
+    storage :file
+  end
 
  # 上記とは別にサムネイルを別サイズで用意します。
  version :thumb do
