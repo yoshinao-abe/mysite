@@ -17,6 +17,7 @@ ruby '2.6.3'
   gem "devise"              #ログイン機能
   gem "acts-as-taggable-on" #タグ機能用の
   gem "fog-aws"
+  gem 'dotenv-rails'
 #gem "mysql2"
   gem "bcrypt"
   gem "rmagick"
