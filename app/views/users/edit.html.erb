@@ -4,21 +4,13 @@
 
 
 <div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
-<h1>ユーザー設定</h1>
+  <div class="col-sm-6 col-sm-offset-3 bg-light">
+<h1 class="bg-success font-weight-bold text-center">ユーザー編集</h1>
   <%= form_for @user,:url => {:action => 'update'}, :html => {:multipart => true} do |f| %>
-     <% if @user.image? %>
       <%= image_tag @user.image.url, class: 'profile-image' %>
-     <% else %>
-      <%= image_tag("/images/icon/images.jpg") %>
-     <% end %>
       <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png, image/jpg' %>
       <%= f.submit "変更", class: "btn btn-primary" %>
   <% end %>
-   <div class="gravatar_edit">
-      <%= gravatar_for @user %>
-      <a href="http://gravatar.com/emails" target="_blank">画像を変更する</a>
-   </div>
     <%= render 'form' %>
   </div>
 </div>

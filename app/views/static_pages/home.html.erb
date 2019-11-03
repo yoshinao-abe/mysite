@@ -16,7 +16,7 @@
 <!--　中央　-->
 <% if logged_in? %>
   <div class="center col-sm-6 bg-light">
-   <h2 class="bg-success text-center font-weight-bold">HOME</h2>
+   <h1 class="bg-success text-center font-weight-bold">HOME</h1>
    <div class="row">
     <section class="micropost_form">
      <!-- Button trigger modal -->
@@ -68,33 +68,12 @@
       </div><!-- /.modal -->
     </section>
    </div>
-<!--　タブ実装　-->
    <div class="p-3">
     <h3 class="text-center font-weight-bold">Micropost Feed</h3>
-    <ul class="nav nav-tabs　nav-justified">
-     <li class="nav-item">
-      <a href="#tab1" class="nav-link font-weight-bold" data-toggle="tab">フォロー投稿一覧</a>
-     </li>
-     <li class="nav-item">
-     <!-- <a href="#tab2" class="nav-link font-weight-bold" data-toggle="tab">お気に入り一覧</a>-->
-     </li>
-    </ul>
-<!--　タブ内容　-->
-    <div class="tab-content">
-     <div id="tab1" class="tab-pane active">
       <div class="col-sm-12">
      　　<%= render 'shared/feed' %>
     　</div>
-     </div>
-     <div id="tab2" class="tab-pane">
-      <div class="col-sm-12">
-     　　<%= render 'shared/feed' %>
-     　　<%#= render 'shared/tags_feed' %>
-    　</div>
-    </div>
    </div>
-<!--　各投稿　-->
-  </div>
   </div>
   
 <% end %>

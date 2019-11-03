@@ -1,8 +1,9 @@
 <!--　右側　-->
 <div class="rightbar">
         
+<% if logged_in? %>
 <!-- ユーザー検索機能 -->
- <h3 class="text-center bg-success font-weight-bold">ユーザー検索</h3>
+ <h3 class="text-center bg-success font-weight-bold mt-3">ユーザー検索</h3>
   <%= form_tag(users_path, :method => 'get' ) do %>
    <%= text_field_tag :search %>
    <%= submit_tag '検索', :name => nil %>
@@ -14,4 +15,5 @@
       <%= link_to "#{tag.name}", tag_path(tag.name), class:"list-group-item list-group-item-action" %>
      <% end %>
     </div>
+<% end %>
 </div>

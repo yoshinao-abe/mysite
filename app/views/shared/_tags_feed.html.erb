@@ -1,15 +1,6 @@
 <% if @feed_tags.any? %>
-
-       <h1  class="text-center bg-primary font-weight-bold">タグ:<%= tag.name(params[:tag]) %></h1>
- <!-- <p><%#= render 'microposts/related_microposts', microposts: @micropost.find_related_tag %><p/> -->
   <ol class="microposts col">
     <%= render @feed_tags %>
   </ol>
   <%= will_paginate @feed_tags %>
-
-<% elsif @feed_items.any? %>
-  <ol class="microposts col">
-    <%= render @feed_items %>
-  </ol>
-  <%= will_paginate @feed_items %>
 <% end %>

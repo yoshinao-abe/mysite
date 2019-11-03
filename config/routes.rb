@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'password_resets/edit'
    # get   'sessions/new'
    # get   'users/new'
+    get   '/home',      to: 'static_pages#home'
     get   '/index',     to: 'microposts#tagindex'
     get   'tags/:tag',  to: 'microposts#index', as: :tag
     get   '/tags',      to: 'microposts#tags'
