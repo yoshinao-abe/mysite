@@ -1,5 +1,5 @@
-どうも！ <%= @user.name %>さん,
+Hi <%= @user.name %>,
 
-ようこそ！GAMERESへ！ 次のリンクから登録を完了させてください！
+Welcome to the Sample App! Click on the link below to activate your account:
 
 <%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
