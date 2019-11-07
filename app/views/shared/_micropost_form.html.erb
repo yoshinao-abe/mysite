@@ -1,19 +1,21 @@
 <%= form_for(@micropost) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field col-sm">
-    <%= f.text_area :content, placeholder: "ここに書いてください" %>
-  </div>
-  <span>
-   <div class="picture ml-2 mb-2">
-     <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-   </div>
-  </span>
-   <div class="field">
-     <%= f.label :tag_list, "ゲームタグ" %>
-     <%= text_field_tag 'micropost[tag_list]', @micropost.tag_list.join(','), "data-role" => "tagsinput" %>
-   </div>
+ <%= render 'shared/error_messages', object: f.object %>
+<div class="field col-sm">
+ <%= f.text_area :content, placeholder: "ここに書いてください" %>
+</div>
+
+<span>
+ <div class="picture ml-2 mb-2">
+  <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+ </div>
+</span>
   
-   <%= f.submit "投稿", class: "btn btn-primary float-right" %>
+<div class="field">
+ <%= f.label :tag_list, "ゲームタグ" %>
+ <%= text_field_tag 'micropost[tag_list]', @micropost.tag_list.join(','), "data-role" => "tagsinput" %>
+</div>
+  
+<%= f.submit "投稿", class: "btn btn-primary float-right" %>
 <% end %>
 
 <script type="text/javascript">

@@ -1,7 +1,7 @@
 <% provide(:title, "Tags") %>
 <div class="row">
-<div class="col-sm-3">
-<% if logged_in? %>
+ <div class="col-sm-3">
+  <% if logged_in? %>
    <aside class="mb-4">
     <section class="user_info">
      <%= render 'shared/user_info' %>
@@ -10,17 +10,17 @@
      <%= render 'shared/stats' %>
     </section>
    </aside>
-<% end %>
-   <%= render 'layouts/leftbar' %>
+  <% end %>
+  <%= render 'layouts/leftbar' %>
+ </div>
+
+
+ <div class="bg-light col-sm-6">
+  <h1 class="bg-success text-center font-weight-bold">TAG-INDEX</h1>
+  <div class="list-group" style="max-width: 400px;">
+   <% @tags.each do |tag| %>
+    <%= link_to "#{tag.name}", tag_path(tag.name), class:"list-group-item list-group-item-action" %>
+   <% end %>
   </div>
-
-
-<div class="bg-light col-sm-6">
-    <h1 class="bg-success text-center font-weight-bold">TAG-INDEX</h1>
-<div class="list-group" style="max-width: 400px;">
-     <% @tags.each do |tag| %>
-      <%= link_to "#{tag.name}", tag_path(tag.name), class:"list-group-item list-group-item-action" %>
-     <% end %>
-</div>
-</div>
+ </div>
 </div>

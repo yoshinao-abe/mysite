@@ -1,23 +1,21 @@
 <% provide(:title, 'All users') %>
 <div class="col-sm-3">
-   <%= render 'layouts/leftbar' %>
+ <%= render 'layouts/leftbar' %>
 </div>
 
-<div class="col-sm-6 bg-light">
-<h1 class="bg-success text-center font-weight-bold">ユーザー一覧</h1>
-<%= will_paginate %>
+<div class="col-sm-6 bg-light container-fluid">
+ <h1 class="bg-success text-center font-weight-bold">ユーザー一覧</h1>
+ <%= will_paginate %>
 
-   <div class="row border border-bottom">
-   </div>
-<ul class="users" style="list-style-type: circle">
+ <div class="row border border-bottom">
+ </div>
+ 
+  <ul class="users" style="list-style-type: none">
    <%= render @users %>
-</ul>
-
-<%= will_paginate %>
+  </ul>
+  <%= will_paginate %>
 </div>
 
 <div class="col-sm-3">
-    
-   <%= render 'layouts/rightbar' %>
-    
+ <%= render 'layouts/rightbar' %>
 </div>

@@ -2,7 +2,7 @@
 <% provide(:title, "TagIndex") %>
 <div class="row">
  <div class="col-sm-3">
-<% if logged_in? %>
+  <% if logged_in? %>
    <aside class="mb-4">
     <section class="user_info">
      <%= render 'shared/user_info' %>
@@ -11,11 +11,11 @@
      <%= render 'shared/stats' %>
     </section>
    </aside>
-<% end %>
-   <%= render 'layouts/leftbar' %>
-  </div>
+  <% end %>
+  <%= render 'layouts/leftbar' %>
+ </div>
 <!--　中央　-->
-<% if logged_in? %>
+ <% if logged_in? %>
   <div class="center col-sm-6 bg-light">
    <h1 class="bg-success text-center font-weight-bold"><%= tag.name(params[:tag]) %></h1>
    <div class="row border border-bottom">
@@ -23,17 +23,15 @@
 <!--　タブ実装　-->
    <div class="p-3">
     <h3 class="text-center">Micropost Feed</h3>
-      <div class="col-sm-12">
-     　　<%= render 'shared/tags_feed' %>
-    　</div>
+    <div class="col-sm-12">
+     <%= render 'shared/tags_feed' %>
+    </div>
    </div>
   </div>
-<% end %>
+ <% end %>
  <div class="col-sm-3">
-  
-
    <%= render 'layouts/rightbar' %>
  </div>
 </div>
+
 <%= javascript_pack_tag "static_pages" %>
-    

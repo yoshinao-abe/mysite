@@ -1,32 +1,29 @@
 <li id="micropost-<%= micropost.id %>" class="list-unstyled border-top border-secondary">
-  <span　class="row mt-2">
-   <%#= link_to gravatar_for(micropost.user, size: 40), micropost.user  %>
-   <%= image_tag micropost.user.image.url, class: 'profile-post-image mt-2 mr-2' %>
-   <%= link_to micropost.user.name, micropost.user %>
-   </span>
+ <span　class="row mt-2">
+  <%= image_tag micropost.user.image.url, class: 'profile-post-image mt-2 mr-2' %>
+  <%= link_to micropost.user.name, micropost.user %>
+ </span>
   
-<div class="col">
-  
+ <div class="col">
   <div class="row">
-    <span class="content m-2">
-      <%= link_to "詳細","/microposts/#{micropost.id}", method: :get %>
-      <%= micropost.content %>
-      <%= image_tag micropost.picture.url if micropost.picture? %>
-    </span>
+   <span class="content m-2">
+    <%= link_to "詳細","/microposts/#{micropost.id}", method: :get %>
+    <%= micropost.content %>
+    <%= image_tag micropost.picture.url if micropost.picture? %>
+   </span>
   </div>
   <div class="row">
    <span class="timestamp mb-1 col-sm">
-       
-    
-     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-     <% if current_user?(micropost.user) %>
-       <%= link_to "delete", micropost, method: :delete,
-                                        data: { confirm: "You sure?" } %>
-     <% end %>
+      Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+      <% if current_user?(micropost.user) %>
+        <%= link_to "delete", micropost, method: :delete,
+                                         data: { confirm: "You sure?" } %>
+      <% end %>
    </span>
-     <div class="text-right">
-     <p class="btn btn-primary text-white mb-2"><%= raw(micropost.tag_list.map { |t| link_to t, tag_path(t), class:"text-white" }.join(', ')) %></p>
-     </div>
+   <div class="text-right">
+    <p class="btn btn-primary text-white mb-2"><%= raw(micropost.tag_list.map { |t| link_to t, tag_path(t), class:"text-white" }.join(', ')) %></p>
+   </div>
   </div>
-</div>
+ </div>
+
 </li>

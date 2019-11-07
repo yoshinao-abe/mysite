@@ -51,16 +51,20 @@ class UsersController < ApplicationController
   end
   
   def following
-    @title = "Following"
+    @title = "フォローしているユーザー"
     @user  = User.find(params[:id])
     @users = @user.following.paginate(page: params[:page])
+    @micropost = current_user.microposts.build
+    @tags = ActsAsTaggableOn::Tag.most_used(10)
     render 'show_follow'
   end
 
   def followers
-    @title = "Followers"
+    @title = "フォロワー"
     @user  = User.find(params[:id])
     @users = @user.followers.paginate(page: params[:page])
+    @micropost = current_user.microposts.build
+    @tags = ActsAsTaggableOn::Tag.most_used(10)
     render 'show_follow'
   end
 

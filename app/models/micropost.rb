@@ -10,9 +10,7 @@ class Micropost < ApplicationRecord
   include ActsAsTaggableOn::TagsHelper
   acts_as_taggable
   
-  
-  
-  private
+private
   
     #アップされた画像のサイズのヴァリデーション
     def picture_size
