@@ -25,6 +25,7 @@
 
   <body>
     <div class="container">
+      <h1 class="sticky-top bg-secondary border border-success text-center font-weight-bold font-italic text-reset text-dark"><%= link_to "GAMERES", root_path, class:"text-reset col-sm" %></h1>
       <% flash.each do |message_type, message| %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
