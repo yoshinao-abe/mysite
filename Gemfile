@@ -9,7 +9,7 @@ ruby '2.6.3'
   gem "faker"               #ありがちなテストデータ作成
 # for Bootstrap4
   gem 'jquery-rails'
-#gem 'bootstrap', '~> 4.3.1'
+ # gem 'bootstrap'
   gem 'bootstrap-sass'      #bootstrapのやつ
   gem 'acts-as-taggable-on'
   gem "ransack"             #検索機能用の 
